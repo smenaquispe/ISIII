@@ -1,0 +1,30 @@
+from flask import Blueprint, request, jsonify
+from .factory import ProyectoFactory
+from .repositories import ProyectoRepository
+from .services import LecitacionService
+
+proyectos_bp = Blueprint('proyectos', __name__)
+proyecto_repo = ProyectoRepository()
+licitacion_service = LecitacionService()
+
+
+@proyectos_bp.route('/crear', methods=['POST'])
+def crear_riesgo():
+    data = request.json
+    nuevo_presupuesto = ProyectoFactory.crear_proyecto(
+        nombre=data['nombre'],
+        descripcion=data['descripcion'],
+        estado=data['estado']
+    )
+    proyecto_repo.adicionar(nuevo_presupuesto)
+    return jsonify({'message': 'Proyecto creado'}), 201
+
+
+@proyectos_bp.route('/verificar', methods=['GET'])
+def generar_informe():
+    verificacion = licitacion_service.verificar_presupuesto()
+    return jsonify({'verificacion': verificacion})
+
+# Agrega las rutas al módulo de Flask
+def init_app(app):
+    app.register_blueprint(proyectos_bp, url_prefix='/proyectos')

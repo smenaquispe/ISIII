@@ -1,0 +1,32 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# Archivos de configuración del entorno
+*.env
+*.flaskenv
+
+# Archivos de Python compilados
+*.pyc
+__pycache__/
+
+# Configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de log
+*.log
+
+# Archivos de caché de MacOS
+.DS_Store
+
+# Archivos de caché de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de base de datos
+*.sqlite3
+*.db
+
+# Configuración de desarrollo
+instance/
