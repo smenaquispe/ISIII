@@ -2,9 +2,6 @@
 #-*- coding: utf-8 -*-
 
 class IProyectoRepositorio:
-    def __init__(self):
-        pass
-
     def adicionar(self, proyecto):
         pass
 
