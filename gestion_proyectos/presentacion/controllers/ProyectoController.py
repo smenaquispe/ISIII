@@ -25,11 +25,20 @@ def crear_proyecto():
     return jsonify({'message': 'Proyecto creado'}), 201
 
 
+#localhost:8080/proyectos/buscar
+@proyectos_bp.route('/buscar', methods=['GET'])
+def generar_informe():
+    # Obtener el id del parámetro de la URL
+    proyecto_id = request.args.get('id')
+    encontrado=interfaz_repositorio_proyecto.buscar(proyecto_id)
+    if encontrado:
+        return jsonify(encontrado)
+    else:
+        return jsonify({'error': 'Proyecto no encontrado'}), 404
+
 #localhost:8080/proyectos/actualizar
 
 #localhost:8080/proyectos/eliminar
-
-#localhost:8080/proyectos/buscar
 
 # Agrega las rutas al módulo de Flask
 def init_app(app):
