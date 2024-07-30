@@ -1,0 +1,27 @@
+{
+	"info": {
+		"_postman_id": "37fb0ff2-541b-47ef-88e0-8c09db9cbcaa",
+		"name": "Gestion_Proyectos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37308775",
+		"_collection_link": "https://www.postman.com/tecla-industries/workspace/proyecto-sedapal-is3/collection/37308430-37fb0ff2-541b-47ef-88e0-8c09db9cbcaa?action=share&source=collection_link&creator=37308775"
+	},
+	"item": [
+		{
+			"name": "create_proyecto",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "verificar_proyecto",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
