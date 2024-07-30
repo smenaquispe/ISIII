@@ -1,9 +1,6 @@
-class PresupuestalService:
+class EstrategiaService:
     def __init__(self):
-        self.informe_presupuesto: str = ""
+        self.informe_estrategia: str = ""
     
-    def verificar_presupuesto(self) -> None:
-        pass
-
-    def generar_informe(self) -> None:
+    def corregir_estrategia(self) -> None:
         pass

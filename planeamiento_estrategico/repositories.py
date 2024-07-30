@@ -1,14 +1,14 @@
-from .models import Presupuesto
+from .models import Estrategia
 
-class PresupuestoRepository:
-    def adicionar(self, presupuesto: Presupuesto) -> None:
+class EstrategiaRepository:
+    def adicionar(self, estrategia: Estrategia) -> None:
         pass
 
     def eliminar(self, id) -> None:
         pass
 
-    def actualizar(self, presupuesto: Presupuesto) -> None:
+    def actualizar(self, estrategia: Estrategia) -> None:
         pass
 
-    def buscar(self, id) -> Presupuesto:
+    def buscar(self, id) -> Estrategia:
         pass

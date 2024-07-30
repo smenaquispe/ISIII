@@ -1,18 +1,10 @@
-from .models import Presupuesto
+from .models import Estrategia
 
-class PresupuestoFactory:
+class EstrategiaFactory:
     @staticmethod
-    def crear_presupuesto(nombre: str, descripcion: str, importe: float, aprobado: bool) -> Presupuesto:
-        return Presupuesto(nombre=nombre, descripcion=descripcion, importe=importe, aprobado=aprobado)
-
-    @staticmethod
-    def solicitar_presupuesto(presupuesto: Presupuesto) -> None:
-        pass
+    def crear_estrategia(nombre: str, descripcion: str, aprobado: bool) -> Estrategia:
+        return Estrategia(nombre=nombre, descripcion=descripcion, aprobado=aprobado)
 
     @staticmethod
-    def recopilar_presupuesto(presupuesto: Presupuesto) -> None:
-        pass
-
-    @staticmethod
-    def revisar_presupuesto(presupuesto: Presupuesto) -> None:
+    def evaluar_estrategia(estrategia: Estrategia) -> None:
         pass

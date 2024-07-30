@@ -1,30 +1,30 @@
 from flask import Blueprint, request, jsonify
-from .factory import PresupuestoFactory
-from .repositories import PresupuestoRepository
-from .services import PresupuestalService
+from .factory import EstrategiaFactory
+from .repositories import EstrategiaRepository
+from .services import EstrategiaService
 
-presupuestos_bp = Blueprint('presupuestos', __name__)
-presupuesto_repo = PresupuestoRepository()
-presupuestal_service = PresupuestalService()
+estrategias_bp = Blueprint('estrategias', __name__)
+estrategia_repo = EstrategiaRepository()
+estragia_service = EstrategiaService()
 
-@presupuestos_bp.route('/crear', methods=['POST'])
+@estrategias_bp.route('/crear', methods=['POST'])
 def crear_riesgo():
     data = request.json
-    nuevo_presupuesto = PresupuestoFactory.crear_presupuesto(
+    nuevo_estrategia = EstrategiaFactory.crear_estrategia(
         nombre=data['nombre'],
         descripcion=data['descripcion'],
         importe=data['importe'],
         aprobado=data['aprobado']
     )
-    presupuesto_repo.adicionar(nuevo_presupuesto)
+    estrategia_repo.adicionar(nuevo_estrategia)
     return jsonify({'message': 'Prespuesto creado'}), 201
 
 
-@presupuestos_bp.route('/informe', methods=['GET'])
+@estrategias_bp.route('/informe', methods=['GET'])
 def generar_informe():
-    informe = presupuestal_service.generar_informe()
+    informe = estragia_service.corregir_estrategia()
     return jsonify({'informe': informe})
 
 # Agrega las rutas al módulo de Flask
 def init_app(app):
-    app.register_blueprint(presupuestos_bp, url_prefix='/presupuestos')
+    app.register_blueprint(estrategias_bp, url_prefix='/estrategias')

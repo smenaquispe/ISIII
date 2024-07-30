@@ -8,6 +8,7 @@ def create_app():
         from gestion_integral_riesgos.controllers import init_app as riesgos_init_app
         from gestion_presupuestal.controllers import init_app as presupuestos_init_app
         from gestion_proyectos.controllers import init_app as proyectos_init_app
+        from planeamiento_estrategico.controllers import init_app as estrategias_init_app
         riesgos_init_app(app)
         presupuestos_init_app(app)
         proyectos_init_app(app)
