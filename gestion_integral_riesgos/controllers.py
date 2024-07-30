@@ -25,7 +25,6 @@ def generar_informe() -> tuple:
     return jsonify({'informe': informe})
 
 def init_app(app) -> None:
-    #app.register_blueprint(riesgos_bp, url_prefix='/riesgos')
     app.config.from_pyfile('config_riesgos.py')
     db_riesgos.init_app(app)
     with app.app_context():
