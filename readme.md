@@ -17,6 +17,6 @@ En resumen, la implementación de un proyecto de software utilizando BDD tiene c
 
 ## 2. Vista General de Arquitectura
 
-### 2.1 Gestion de Proyectos y Obras
+### 2.1 Gestión de Proyectos y Obras
 
 ![Arquitectura Gestion de Proyectos](<src readme\Gestion de Proyectos.png>)
