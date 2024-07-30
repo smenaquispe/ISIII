@@ -2,12 +2,13 @@ from flask import Blueprint, request, jsonify
 from .factory import ProyectoFactory
 from .repositories import ProyectoRepository
 from .services import LecitacionService
-
+#Subdominios creado /proyectos
 proyectos_bp = Blueprint('proyectos', __name__)
+
 proyecto_repo = ProyectoRepository()
 licitacion_service = LecitacionService()
 
-
+#localhost:8080/proyectos/crear
 @proyectos_bp.route('/crear', methods=['POST'])
 def crear_riesgo():
     data = request.json
@@ -19,7 +20,7 @@ def crear_riesgo():
     proyecto_repo.adicionar(nuevo_presupuesto)
     return jsonify({'message': 'Proyecto creado'}), 201
 
-
+#localhost:8080/proyectos/verificar
 @proyectos_bp.route('/verificar', methods=['GET'])
 def generar_informe():
     verificacion = licitacion_service.verificar_presupuesto()
