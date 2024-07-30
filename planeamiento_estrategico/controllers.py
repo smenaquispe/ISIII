@@ -20,7 +20,7 @@ def crear_riesgo():
     return jsonify({'message': 'Prespuesto creado'}), 201
 
 
-@estrategias_bp.route('/informe', methods=['GET'])
+@estrategias_bp.route('/corregir', methods=['GET'])
 def generar_informe():
     informe = estragia_service.corregir_estrategia()
     return jsonify({'informe': informe})
