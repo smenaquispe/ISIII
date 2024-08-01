@@ -13,7 +13,6 @@ class RiesgosRepository:
             db_riesgos.session.commit()
 
     def actualizar(self, riesgo: Riesgo) -> None:
-        db_riesgos.session.merge(riesgo)
         db_riesgos.session.commit()
 
     def buscar(self, id) -> Riesgo:
