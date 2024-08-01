@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
 from ...domain.proyecto.factory import ProyectoFabrica
-from ...domain.proyecto.repository.IProyectoRepositorio import IProyectoRepositorio
+from ...repository.ProyectoRepositorio import ProyectoRepositorio
 #Subdominios creado /proyectos
 proyectos_bp = Blueprint('proyecto', __name__)
 
-interfaz_repositorio_proyecto=IProyectoRepositorio()
+repositorio_proyecto=ProyectoRepositorio()
 
 #localhost:8080/proyectos/crear
 @proyectos_bp.route('/crear', methods=['POST']) #solicitud que requiere de un servicio
@@ -21,8 +21,8 @@ def crear_proyecto():
         fecha_fin=data['fecha_fin'],
         responsable=data['responsable']
     )
-    interfaz_repositorio_proyecto.adicionar(nuevo_proyecto)
-    return jsonify({'message': 'Proyecto creado'}), 201
+    mensaje, codigo=repositorio_proyecto.adicionar(nuevo_proyecto)
+    return jsonify(mensaje), codigo
 
 
 #localhost:8080/proyectos/buscar

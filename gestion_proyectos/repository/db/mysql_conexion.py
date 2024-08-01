@@ -23,11 +23,11 @@ class BDMySql:
         except Error as e:
             print("Error durante la conexion", e)
 
-    @property
-    def get_conexion(self)-> mysql:
+
+    def get_conexion(self):
         return self._conexion
 
-    def cerrar_conexion(self):
+    def cerrar_conexion(self)->None:
         self._conexion.close()
         print("Se cerro la conexion")
 

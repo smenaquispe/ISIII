@@ -2,5 +2,6 @@
 #-*- coding: utf-8 -*-
 
 class ProyectoServicioDominio:
-    pass
+    def obtener_diccionario(self, proyecto):
+        return vars(proyecto)
     
