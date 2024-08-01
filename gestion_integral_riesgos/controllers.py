@@ -20,10 +20,25 @@ def crear_riesgo() -> tuple:
     riesgo_repo.adicionar(nuevo_riesgo)
     return jsonify({'message': 'Riesgo creado','id': nuevo_riesgo.id}), 201
 
+@riesgos_bp.route('/priorizar/<id>', methods=['PUT'])
+def priorizar_riesgo(id: int) -> tuple:
+    riesgo = riesgo_repo.buscar(id)
+    if not riesgo:
+        return jsonify({'message': 'Riesgo no encontrado'}), 404
+    
+    data = request.json
+    if 'prioridad_alta' in data:
+        riesgo.prioridad_alta = data['prioridad_alta']
+        riesgo_repo.actualizar(riesgo)
+        return jsonify({'message': 'Prioridad actualizada'}), 200
+    else:
+        return jsonify({'message': 'Campo "prioridad_alta" no proporcionado'}), 400
+
 @riesgos_bp.route('/informe', methods=['GET'])
 def generar_informe() -> tuple:
     informe = monitoreo_service.generar_informe()
     return jsonify({'informe': informe})
+
 
 def init_app(app) -> None:
     app.config.from_pyfile('config_riesgos.py')
