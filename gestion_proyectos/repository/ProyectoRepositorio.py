@@ -26,12 +26,12 @@ class ProyectoRepositorio(IProyectoRepositorio):
         except mysql.connector.Error as err:
             # Manejo de errores específicos de MySQL
             print(f"Error: {err}")
-            return {"mensaje": "Error al crear el proyecto"}
+            return {"mensaje": "Error al crear el proyecto"},404
         
         except Exception as e:
             # Manejo de errores generales
             print(f"Error: {e}")
-            return {"mensaje": "Error inesperado"}
+            return {"mensaje": "Error inesperado"},404
         
         finally:
             if cursor:
@@ -72,6 +72,7 @@ class ProyectoRepositorio(IProyectoRepositorio):
                     "responsable": resultado[8]
                 }
                 return diccionario, 200
+            return {"mensaje": "No hay ningun registro"}, 200
         
         except mysql.connector.Error as err:
             # Manejo de errores específicos de MySQL
