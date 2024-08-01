@@ -14,7 +14,8 @@ class MonitoreoService:
                 'id': riesgo.id,
                 'nombre': riesgo.nombre,
                 'descripcion': riesgo.descripcion,
-                'probabilidad': riesgo.probabilidad
+                'probabilidad': riesgo.probabilidad,
+                'prioridad_alta': riesgo.prioridad_alta
             }
             informe.append(riesgo_info)
         
