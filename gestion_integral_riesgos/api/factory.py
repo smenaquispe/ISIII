@@ -1,4 +1,4 @@
-from .models import Riesgo
+from gestion_integral_riesgos.api.models import Riesgo
 
 class RiesgoFactory:
     @staticmethod

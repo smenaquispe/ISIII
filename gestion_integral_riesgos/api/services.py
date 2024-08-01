@@ -1,4 +1,4 @@
-from .models import Riesgo, db_riesgos
+from gestion_integral_riesgos.api.models import Riesgo, db_riesgos
 
 class MonitoreoService:
     def __init__(self, riesgo_repo):

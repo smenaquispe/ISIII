@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
-from .factory import RiesgoFactory
-from .repositories import RiesgosRepository
-from .services import MonitoreoService
-from .models import db_riesgos
+from gestion_integral_riesgos.api.factory import RiesgoFactory
+from gestion_integral_riesgos.api.repositories import RiesgosRepository
+from gestion_integral_riesgos.api.services import MonitoreoService
+from gestion_integral_riesgos.api.models import db_riesgos
 
 riesgos_bp = Blueprint('riesgos', __name__)
 riesgo_repo = RiesgosRepository()
@@ -41,7 +41,7 @@ def generar_informe() -> tuple:
 
 
 def init_app(app) -> None:
-    app.config.from_pyfile('config_riesgos.py')
+    app.config.from_pyfile('gestion_integral_riesgos/config_riesgos.py')
     db_riesgos.init_app(app)
     with app.app_context():
         db_riesgos.create_all()
