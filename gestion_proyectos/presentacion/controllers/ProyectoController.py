@@ -51,9 +51,12 @@ def actualizar_proyecto():
     mensaje, codigo=repositorio_proyecto.actualizar(nuevo_proyecto)
     return jsonify(mensaje), codigo
 
-
-
 #localhost:8080/proyectos/eliminar
+@proyectos_bp.route("/eliminar", methods=["DELETE"])
+def eliminar_proyecto():
+    proyecto_id = request.args.get('id')
+    mensaje, codigo=repositorio_proyecto.eliminar(proyecto_id)
+    return jsonify(mensaje), codigo
 
 # Agrega las rutas al módulo de Flask
 def init_app(app):

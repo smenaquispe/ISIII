@@ -77,8 +77,36 @@ class ProyectoRepositorio(IProyectoRepositorio):
             if conexion:
                 bd.cerrar_conexion()
 
-    def eliminar(self, proyecto):
-        pass
+    def eliminar(self, id):
+        bd = BDMySql()
+        try:
+            bd.crear_conexion()
+            conexion = bd.get_conexion()
+            cursor = conexion.cursor()
+            
+            query = ("DELETE FROM proyecto WHERE id=%s")
+            
+            cursor.execute(query, (id,))
+            conexion.commit()
+            if cursor.rowcount == 0:
+                return {"mensaje": "Proyecto no encontrado"}, 404
+            return {"mensaje": "Proyecto eliminado correctamente"}, 200 
+        
+        except mysql.connector.Error as err:
+            # Manejo de errores específicos de MySQL
+            print(f"Error: {err}")
+            return {"mensaje": "Error al eliminar el proyecto - MYSQL"},404
+        
+        except Exception as e:
+            # Manejo de errores generales
+            print(f"Error: {e}")
+            return {"mensaje": "Error inesperado - GENERAL"},404
+        
+        finally:
+            if cursor:
+                cursor.close()
+            if conexion:
+                bd.cerrar_conexion()
 
     def buscar(self, id):
         bd = BDMySql()

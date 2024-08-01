@@ -8,7 +8,7 @@ class IProyectoRepositorio(ABC):
     def actualizar(self, proyecto, id):
         pass
     @abstractmethod
-    def eliminar(self, proyecto):
+    def eliminar(self, id):
         pass
     @abstractmethod
     def buscar(self, id):
