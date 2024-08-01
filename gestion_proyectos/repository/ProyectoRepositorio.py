@@ -13,7 +13,7 @@ class ProyectoRepositorio(IProyectoRepositorio):
             conexion = bd.get_conexion()
             cursor = conexion.cursor()
             
-            agregar_proyecto = ("INSERT INTO Proyecto (id, nombre, descripcion, "
+            agregar_proyecto = ("INSERT INTO proyecto (id, nombre, descripcion, "
                                 "estado, tipo, presupuesto, fecha_inicio, fecha_fin, responsable) "
                                 "VALUES (%(id)s, %(nombre)s, %(descripcion)s, %(estado)s, "
                                 "%(tipo)s, %(presupuesto)s, %(fecha_inicio)s, %(fecha_fin)s, %(responsable)s)")
@@ -41,7 +41,41 @@ class ProyectoRepositorio(IProyectoRepositorio):
 
 
     def actualizar(self, proyecto):
-        pass
+        servicio_proyecto=ProyectoServicioDominio()
+        diccionario=servicio_proyecto.obtener_diccionario(proyecto)
+        bd = BDMySql()
+        try:
+            bd.crear_conexion()
+            conexion = bd.get_conexion()
+            cursor = conexion.cursor()
+            
+            query = ("UPDATE proyecto SET nombre=%(nombre)s,"
+                                "descripcion=%(descripcion)s,estado=%(estado)s,"
+                                "tipo=%(tipo)s, presupuesto=%(presupuesto)s,"
+                                "fecha_inicio=%(fecha_inicio)s, fecha_fin=%(fecha_fin)s,"
+                                "responsable=%(responsable)s WHERE id=%(id)s")
+            
+            cursor.execute(query, diccionario)
+            conexion.commit()
+            if cursor.rowcount == 0:
+                return {"mensaje": "Proyecto no encontrado"}, 404
+            return {"mensaje": "Proyecto actualizado correctamente"}, 200 
+        
+        except mysql.connector.Error as err:
+            # Manejo de errores específicos de MySQL
+            print(f"Error: {err}")
+            return {"mensaje": "Error al actualizar el proyecto - MYSQL"},404
+        
+        except Exception as e:
+            # Manejo de errores generales
+            print(f"Error: {e}")
+            return {"mensaje": "Error inesperado - GENERAL"},404
+        
+        finally:
+            if cursor:
+                cursor.close()
+            if conexion:
+                bd.cerrar_conexion()
 
     def eliminar(self, proyecto):
         pass

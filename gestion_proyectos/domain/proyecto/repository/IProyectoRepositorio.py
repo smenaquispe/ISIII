@@ -5,7 +5,7 @@ class IProyectoRepositorio(ABC):
     def adicionar(self, proyecto):
         pass
     @abstractmethod
-    def actualizar(self, proyecto):
+    def actualizar(self, proyecto, id):
         pass
     @abstractmethod
     def eliminar(self, proyecto):
@@ -13,8 +13,5 @@ class IProyectoRepositorio(ABC):
     @abstractmethod
     def buscar(self, id):
         pass
-    """
-        # Buscar el proyecto por id
-        proyecto = next((p for p in proyectos if p["id"] == id), None)
-        return proyecto"""
+
         
