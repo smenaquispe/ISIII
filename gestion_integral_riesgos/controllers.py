@@ -12,6 +12,7 @@ monitoreo_service = MonitoreoService(riesgo_repo)
 def crear_riesgo() -> tuple:
     data = request.json
     nuevo_riesgo = RiesgoFactory.crear_riesgo(
+        id = data['id'],
         nombre=data['nombre'],
         descripcion=data['descripcion'],
         probabilidad=data['probabilidad']
