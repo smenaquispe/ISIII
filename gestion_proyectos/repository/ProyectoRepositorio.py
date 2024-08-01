@@ -47,4 +47,44 @@ class ProyectoRepositorio(IProyectoRepositorio):
         pass
 
     def buscar(self, id):
-        pass
+        bd = BDMySql()
+        try:
+            bd.crear_conexion()
+            conexion = bd.get_conexion()
+            cursor = conexion.cursor()
+            
+            query = ("SELECT * FROM proyecto WHERE id=%s")
+            
+            cursor.execute(query, (id,))
+            resultado = cursor.fetchone()  # Obtener un solo resultado
+        
+            # Opcionalmente, podrías verificar si se encontró un resultado
+            if resultado:
+                diccionario = {
+                    "id": resultado[0],
+                    "nombre": resultado[1],
+                    "descripcion": resultado[2],
+                    "estado": resultado[3],
+                    "tipo": resultado[4],
+                    "presupuesto": resultado[5],
+                    "fecha_inicio": resultado[6].strftime("%Y-%m-%d"),
+                    "fecha_fin": resultado[7].strftime("%Y-%m-%d"),
+                    "responsable": resultado[8]
+                }
+                return diccionario, 200
+        
+        except mysql.connector.Error as err:
+            # Manejo de errores específicos de MySQL
+            print(f"Error: {err}")
+            return {"mensaje": "Error al crear el proyecto"}
+        
+        except Exception as e:
+            # Manejo de errores generales
+            print(f"Error: {e}")
+            return {"mensaje": "Error inesperado"}
+        
+        finally:
+            if cursor:
+                cursor.close()
+            if conexion:
+                bd.cerrar_conexion()

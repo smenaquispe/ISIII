@@ -30,11 +30,8 @@ def crear_proyecto():
 def generar_informe():
     # Obtener el id del parámetro de la URL
     proyecto_id = request.args.get('id')
-    encontrado=interfaz_repositorio_proyecto.buscar(proyecto_id)
-    if encontrado:
-        return jsonify(encontrado)
-    else:
-        return jsonify({'error': 'Proyecto no encontrado'}), 404
+    resultado, codigo=repositorio_proyecto.buscar(proyecto_id)
+    return jsonify(resultado), codigo 
 
 #localhost:8080/proyectos/actualizar
 
