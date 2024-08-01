@@ -1,14 +1,6 @@
-from uuid import uuid4
+from app import db
 
-class Estrategia:
-    def __init__(self, nombre: str, descripcion: str, aprobado: bool) -> None:
-        self.id: str = str(uuid4())
-        self.nombre: str = nombre
-        self.descripcion: str = descripcion
-        self.aprobado: bool = aprobado
-
-    def crear_estrategia(self) -> None:
-        pass
-
-    def evaluar_estrategia(self) -> None:
-        pass
+class Estrategia(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(50), nullable=False)
+    descripcion = db.Column(db.String(200), nullable=False)
