@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ...domain.proyecto import ProyectoFabrica
-from ...domain.proyecto.IProyectoRepositorio import IProyectoRepositorio
+from ...domain.proyecto.factory import ProyectoFabrica
+from ...domain.proyecto.repository.IProyectoRepositorio import IProyectoRepositorio
 #Subdominios creado /proyectos
 proyectos_bp = Blueprint('proyecto', __name__)
 
