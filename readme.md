@@ -15,3 +15,6 @@ Tecnologias Usadas
 
 
 ![diagrama microservicio](https://github.com/user-attachments/assets/e47f2e57-01f9-45fa-aeb1-5286daecfe92)
+
+
+![BONITA](https://github.com/user-attachments/assets/001eda68-66c9-485b-84da-096eda894ff6)
