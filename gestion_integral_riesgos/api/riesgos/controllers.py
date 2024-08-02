@@ -1,15 +1,19 @@
 from flask import Blueprint, request, jsonify
-from gestion_integral_riesgos.api.factory import RiesgoFactory
-from gestion_integral_riesgos.api.repositories import RiesgosRepository
-from gestion_integral_riesgos.api.services import MonitoreoService
-from gestion_integral_riesgos.api.models import db_riesgos
+from .factory import RiesgoFactory
+from .repositories import RiesgosRepository
+from .services import MonitoreoService
+from ..usuarios.services import token_required, requires_roles 
+from .. import db
 
 riesgos_bp = Blueprint('riesgos', __name__)
 riesgo_repo = RiesgosRepository()
 monitoreo_service = MonitoreoService(riesgo_repo)
 
+
 @riesgos_bp.route('/crear', methods=['POST'])
-def crear_riesgo() -> tuple:
+@token_required
+@requires_roles('supervisor')
+def crear_riesgo(user) -> tuple:
     data = request.json
     nuevo_riesgo = RiesgoFactory.crear_riesgo(
         id = data['id'],
@@ -20,8 +24,11 @@ def crear_riesgo() -> tuple:
     riesgo_repo.adicionar(nuevo_riesgo)
     return jsonify({'message': 'Riesgo creado','id': nuevo_riesgo.id}), 201
 
+
 @riesgos_bp.route('/priorizar/<id>', methods=['PUT'])
-def priorizar_riesgo(id: int) -> tuple:
+@token_required
+@requires_roles('auditor')
+def priorizar_riesgo(user,id: int) -> tuple:
     riesgo = riesgo_repo.buscar(id)
     if not riesgo:
         return jsonify({'message': 'Riesgo no encontrado'}), 404
@@ -41,8 +48,9 @@ def generar_informe() -> tuple:
 
 
 def init_app(app) -> None:
-    app.config.from_pyfile('gestion_integral_riesgos/config_riesgos.py')
-    db_riesgos.init_app(app)
-    with app.app_context():
-        db_riesgos.create_all()
+    if not hasattr(app, 'extensions') or 'sqlalchemy' not in app.extensions:
+        app.config.from_pyfile('gestion_integral_riesgos/config_riesgos.py')
+        db.init_app(app)
+        with app.app_context():
+            db.create_all()
     app.register_blueprint(riesgos_bp, url_prefix='/riesgos')
