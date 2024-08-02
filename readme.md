@@ -1,5 +1,4 @@
-# <span style="color:blue; font-family:Times New Roman">**(Tecla industry)**</span>
-# <span style="color:blue; font-family:Times New Roman">**(Tecla industry)**</span>
+<h1 style="color:#2E8B57; font-family:'Times New Roman';">Tecla Industry</h1>
 
 ## INTEGRANTES:
 - Apaza Andaluz Diego Francisco
