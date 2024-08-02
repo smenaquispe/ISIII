@@ -13,27 +13,21 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 201\", function () {\r",
+							"//ESCENARIO: CREAR PROYECTO\r",
+							"//GIVEN : DATOS RECIBIDOS EN EL BODY, PARA CREAR UN NUEVO PROYECTO\r",
+							"// WHEN: Se envía una solicitud POST para crear el proyecto\r",
+							"pm.sendRequest(\"http://127.0.0.1:5000/proyecto/crear\", function (err, res) {\r",
+							"    console.log(res)\r",
+							"});\r",
+							"//THEN EL CODIGO HTTP RECIBIDO DEBE SER 201 \r",
+							"pm.test(\"Status code is 201\", function(){\r",
 							"    pm.response.to.have.status(201);\r",
 							"});\r",
-							"\r",
-							"pm.test(\"Proyecto creado'\", function () {\r",
+							"//AND EL PROYECTO ES CREADO\r",
+							"pm.test(\"Proyecto creado\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.message).to.eql(\"Proyecto creado\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Successful POST request\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Status code name has string\", function () {\r",
-							"    pm.response.to.have.status(\"CREATED\");\r",
-							"});\r",
-							""
+							"    pm.expect(jsonData.mensaje).to.eql(\"Proyecto creado\");\r",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -45,7 +39,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\" : 1,\r\n    \"nombre\": \"Ampliacion de tuberias\",\r\n    \"descripcion\": \"Nueva obra en Arequipa\",\r\n    \"estado\": \"No Iniciado\",\r\n    \"tipo\": \"Construccion\",\r\n    \"presupuesto\": 150.0,\r\n    \"fecha_inicio\": \"07/05/2020\",\r\n    \"fecha_fin\":\"20/02/2021\",\r\n    \"responsable\":\"Empresa de Construccion\"\r\n}",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nombre\": \"Ampliacion de tuberias\",\r\n    \"descripcion\": \"Nueva obra en Arequipa\",\r\n    \"estado\": \"No Iniciado\",\r\n    \"tipo\": \"Construccion\",\r\n    \"presupuesto\": 150.0,\r\n    \"fecha_inicio\": \"2020/05/01\",\r\n    \"fecha_fin\":\"2021/005/10\",\r\n    \"responsable\":\"Empresa de Construccion\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,28 +65,26 @@
 			"response": []
 		},
 		{
-			"name": "buscarProyectoExistente",
+			"name": "buscarProyecto",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"//CASO: BUSQUEDA DE UN PROYECTO EXISTENTE\r",
-							"pm.test(\"Status code is 200\", function () {\r",
+							"//ESCENARIO: OBTENER UN PROYECTO\r",
+							"//GIVEN : EL ENVIO DE UN PARAMETRO A TRAVES DEL ENDPOINT http://127.0.0.1:5000/proyecto/buscar\r",
+							"// WHEN: SE ENVIA UNA SOLICITUD GET\r",
+							"pm.sendRequest(\"http://127.0.0.1:5000/proyecto/buscar\", function (err, res) {\r",
+							"    console.log(res)\r",
+							"});\r",
+							"//THEN EL CODIGO HTTP RECIBIDO DEBE SER 200 \r",
+							"pm.test(\"Status code is 200\", function(){\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
-							"pm.test(\"Proyecto creado'\", function () {\r",
+							"//AND LOS DATOS REQUERIDOS SON RETORNADOS\r",
+							"pm.test(\"El proyecto no esta vacio\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id).to.eql(\"1\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Status code name has string\", function () {\r",
-							"    pm.response.to.have.status(\"OK\");\r",
+							"    pm.expect(jsonData.length).not.eql(0);\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -140,25 +132,152 @@
 			"response": []
 		},
 		{
-			"name": "buscarProyectoInexistente",
+			"name": "actualizarProyecto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nombre\": \"Ampliacion\",\r\n    \"descripcion\": \"Nueva obra en Lima\",\r\n    \"estado\": \"Terminado\",\r\n    \"tipo\": \"Construccion\",\r\n    \"presupuesto\": 150.0,\r\n    \"fecha_inicio\": \"2020/05/01\",\r\n    \"fecha_fin\":\"2021/005/10\",\r\n    \"responsable\":\"Empresa SAC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/proyecto/actualizar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"proyecto",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarProyecto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/proyecto/eliminar?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"proyecto",
+						"eliminar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearEstudio",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"//CASO: BUSQUEDA DE UN PROYECTO INEXISTENTE\r",
-							"pm.test(\"Status code is 404\", function () {\r",
-							"    pm.response.to.have.status(404);\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Proyecto creado'\", function () {\r",
+							"pm.test(\"Estudio creado\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.error).to.eql(\"Proyecto no encontrado\");\r",
+							"    pm.expect(jsonData.message).to.eql(\"Estudio creado\");\r",
 							"});\r",
 							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
 							"\r",
 							"pm.test(\"Status code name has string\", function () {\r",
-							"    pm.response.to.have.status(\"NOT FOUND\");\r",
+							"    pm.response.to.have.status(\"CREATED\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nombre\": \"Analisis de riesgos\",\r\n    \"descripcion\": \"Se analizaran los riesgos del proyecto\",\r\n    \"fecha_realizacion\": \"2019/05/01\",\r\n    \"costo\": 1500.0,\r\n    \"tipo\": \"Preliminares\",\r\n    \"fecha_fin\":\"2023/05/10\",\r\n    \"resultado\":\"Aprobado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/estudio/crear",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"estudio",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarEstudio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//CASO: BUSQUEDA DE UN PROYECTO EXISTENTE\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Eds\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -170,7 +289,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/proyecto/buscar?id=100",
+					"raw": "http://127.0.0.1:5000/estudio/buscar?id=1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -180,13 +299,74 @@
 					],
 					"port": "5000",
 					"path": [
-						"proyecto",
+						"estudio",
 						"buscar"
 					],
 					"query": [
 						{
 							"key": "id",
-							"value": "100"
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarEstudio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nombre\": \"Analisis de impacto\",\r\n    \"descripcion\": \"Se analizaran los impactos del proyecto\",\r\n    \"fecha_realizacion\": \"2019/05/01\",\r\n    \"costo\": 100.0,\r\n    \"tipo\": \"Finales\",\r\n    \"fecha_fin\":\"2023/05/10\",\r\n    \"resultado\":\"En espera\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/estudio/actualizar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"estudio",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarEstudio",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/estudio/eliminar?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"estudio",
+						"eliminar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
 						}
 					]
 				}

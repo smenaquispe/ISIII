@@ -45,11 +45,37 @@ Como el nombre lo indica, estos microservicios se encargan de gestionar los proy
 
 ### 3.1. Pruebas de API
 ### 3.1.1 Proyecto
-<img src="../archivos_readme/ppc.jpeg" alt="postman_proyecto_crear"/>
 
-<img src="../archivos_readme/ppb.jpeg" alt="postman_proyecto_buscar"/>
+<p align="center">
+    <img src="../archivos_readme/ppc.jpeg" alt="postman_proyecto_crear" style="text-align: center;"/>
+</p>
 
-### 3.2. Pruebas de rendimiento
+<p align="center">
+    <img src="../archivos_readme/ppb.jpeg" alt="postman_proyecto_buscar"/>
+</p>
 
-### 3.3. Pruebas de seguridad
+<p align="center">
+    <img src="../archivos_readme/swagger.jpeg" alt="swagger"/>
+</p>
 
+<p align="center">
+    <img src="../archivos_readme/s1.jpeg" alt="postman_proyecto_buscar"/>
+</p>
+
+<p align="center">
+    <img src="../archivos_readme/s2.jpeg" alt="swagger"/>
+</p>
+
+### 3.2. Pruebas de seguridad
+
+<p align="center">
+    <img src="../archivos_readme/o1.jpeg" alt=""/>
+</p>
+
+<p align="center">
+    <img src="../archivos_readme/o2.jpeg" alt="postman_proyecto_buscar"/>
+</p>
+
+<p align="center">
+    <img src="../archivos_readme/o3.jpeg" alt="swagger"/>
+</p>

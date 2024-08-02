@@ -1,9 +1,9 @@
 
 from flask import Flask
+from flasgger import Swagger
 
 def create_app():
     app = Flask(__name__)
-
     with app.app_context():
         from gestion_integral_riesgos.controllers import init_app as riesgos_init_app
         from gestion_presupuestal.controllers import init_app as presupuestos_init_app
@@ -15,9 +15,10 @@ def create_app():
         presupuestos_init_app(app)
         proyectos_init_app(app)
         estudios_init_app(app)
-
+    
     return app
 
 if __name__ == '__main__':
     app = create_app()
+    swagger = Swagger(app)
     app.run(debug=True)
