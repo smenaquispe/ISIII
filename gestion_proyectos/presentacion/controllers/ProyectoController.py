@@ -4,7 +4,7 @@ from ...services.implementation.GestionProyectos import GestionProyectos
 #Subdominios creado /proyectos
 proyectos_bp = Blueprint('proyecto', __name__)
 
-repositorio_proyecto=ProyectoRepositorio()#obsoleto
+#repositorio_proyecto=ProyectoRepositorio()#obsoleto
 servicios_proyecto=GestionProyectos()
 
 #localhost:8080/proyectos/crear

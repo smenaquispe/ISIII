@@ -1,22 +1,15 @@
-#!/usr/bin/python
-#-*- coding: utf-8 -*-
+from abc import ABC,abstractmethod
 
-class IGestionEstudios:
-    def __init__(self):
+class IGestionEstudios(ABC):
+    @abstractmethod
+    def crear_estudio(self, data):
         pass
-
-    def crear_estudio(self, ):
+    @abstractmethod
+    def eliminar_estudio(self, id):
         pass
-
-    def buscar_estudio(self, ):
+    @abstractmethod
+    def actualizar_estudio(self,data):
         pass
-
-    def actualizar_estudio(self, ):
+    @abstractmethod
+    def buscar_estudio(self, id):
         pass
-
-    def eliminar_estudio(self, ):
-        pass
-
-    def obtener_estudios_de_proyecto(self, ):
-        pass
-

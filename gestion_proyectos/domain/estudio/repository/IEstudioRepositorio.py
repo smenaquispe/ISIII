@@ -1,6 +1,6 @@
 from abc import ABC,abstractmethod
 
-class IProyectoRepositorio(ABC):
+class IEstudioRepositorio(ABC):
     @abstractmethod
     def adicionar(self, data):
         pass
@@ -13,5 +13,3 @@ class IProyectoRepositorio(ABC):
     @abstractmethod
     def buscar(self, id):
         pass
-
-        
