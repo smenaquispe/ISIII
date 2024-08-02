@@ -75,3 +75,10 @@ Para la gestión de cambios se utilizó la herramienta Trello, con estilo Kanban
 
 ![trello](https://github.com/user-attachments/assets/3263652a-6595-48ea-be48-e7bacb6f1d90)
 
+## 6. OWASP ZAP
+
+![image](https://github.com/user-attachments/assets/ceca9cf1-aa10-4fcf-aa28-ec8bd1133179)
+
+![image](https://github.com/user-attachments/assets/4e5c6bbb-b109-4d3f-b7b6-22ea91a94123)
+
+
