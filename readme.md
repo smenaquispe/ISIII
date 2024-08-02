@@ -23,3 +23,6 @@ SWEGGER
 
 ![swegger](https://github.com/user-attachments/assets/99626d7a-89e3-485f-a245-85540743d818)
 
+MODELO SWEGGER
+
+![modelo](https://github.com/user-attachments/assets/69f8fc3c-1371-45ce-af9b-a3249eeb8b3c)
