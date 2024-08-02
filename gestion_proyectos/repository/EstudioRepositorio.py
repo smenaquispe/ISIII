@@ -1,5 +1,5 @@
 from ..domain.estudio.repository.IEstudioRepositorio import IEstudioRepositorio
-#from ..domain.estudio.services.EstudioServiciosDominio import ProyectoServicioDominio
+
 from ..repository.db.mysql_conexion import BDMySql
 import mysql.connector
 

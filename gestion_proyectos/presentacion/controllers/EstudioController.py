@@ -4,7 +4,6 @@ from ...services.implementation.GestionEstudios import GestionEstudios
 #Subdominios creado /proyectos
 proyectos_bp = Blueprint('estudio', __name__)
 
-#repositorio_estudio=EstudioRepositorio()#obsoleto
 servicios_estudio=GestionEstudios()
 
 #localhost:8080/proyectos/crear
