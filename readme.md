@@ -33,3 +33,5 @@
 ## 3. Microservicios
 
 El sistema desarrollado a seguido una arquitectura de microservicios, los cuales se identifaron en base a un proceso de negocio de la empresa cliente, Sedapal.
+![departamentos](https://github.com/user-attachments/assets/debe27cc-3f3d-4e59-8580-57f348da97c5)
+
