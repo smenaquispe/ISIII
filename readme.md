@@ -19,10 +19,8 @@
 El propósito fundamental de este sistema de gestión de suministro de agua potable es proporcionar a Sedapal una herramienta integral y efectiva que optimice la administración de su red de distribución de agua potable. Busca mejorar la eficiencia operativa al permitir una supervisión más precisa y detallada de todos los aspectos del suministro, desde la gestión de clientes hasta el monitoreo en tiempo real de la infraestructura. Además, busca reducir las pérdidas de agua, mejorar la calidad del servicio y permitir una respuesta más ágil ante cualquier incidencia o emergencia, contribuyendo así a garantizar un suministro confiable y de calidad para los habitantes de Lima y sus alrededores. Mediante la implementación de este sistema, Sedapal podrá fortalecer su capacidad de gestión y consolidarse como un proveedor de servicios de agua potable eficiente, confiable y orientado al bienestar de la comunidad.
 
 
-## 2. Requisitos y Features
 
-
-## 4.Principios SOLID
+## 2.Principios SOLID
 - S  Principio de Responsabilidad Única (Single Responsibility Principle): Cada clase debe tener una única responsabilidad. Por ejemplo, una clase UserService se encarga únicamente de la lógica relacionada con los usuarios.
 ![image](https://github.com/user-attachments/assets/b5ac7c43-d446-4ca1-8277-e01f6f9d3d8b)
 
@@ -40,7 +38,7 @@ El propósito fundamental de este sistema de gestión de suministro de agua pota
 
 
 
-## 5. Microservicios
+## 3. Microservicios
 
 El sistema desarrollado a seguido una arquitectura de microservicios, los cuales se identifaron en base a un proceso de negocio de la empresa cliente, Sedapal.
 
