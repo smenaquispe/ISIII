@@ -25,6 +25,17 @@ def crear_riesgo(user) -> tuple:
     return jsonify({'message': 'Riesgo creado','id': nuevo_riesgo.id}), 201
 
 
+@riesgos_bp.route('/eliminar/<id>', methods=['DELETE'])
+@token_required
+@requires_roles('supervisor')
+def eliminar_riesgo(user, id: int) -> tuple:
+    riesgo = riesgo_repo.buscar(id)
+    if not riesgo:
+        return jsonify({'message': 'Riesgo no encontrado'}), 404
+
+    riesgo_repo.eliminar(id)
+    return jsonify({'message': 'Riesgo eliminado'}), 200
+
 @riesgos_bp.route('/priorizar/<id>', methods=['PUT'])
 @token_required
 @requires_roles('auditor')
