@@ -1,18 +1,10 @@
-from .models import Tarifario
+from .models import Tarifa
 
-class TarifarioFactory:
+class TarifaFactory:
     @staticmethod
-    def crear_tarifario(nombre: str, descripcion: str, importe: float, aprobado: bool) -> Tarifario:
-        return Tarifario(nombre=nombre, descripcion=descripcion, importe=importe, aprobado=aprobado)
-
-    @staticmethod
-    def solicitar_tarifario(tarifario: Tarifario) -> None:
-        pass
+    def crear_tarifa(nombre: str, descripcion: str, aprobado: bool) -> Tarifa:
+        return Tarifa(nombre=nombre, descripcion=descripcion, aprobado=aprobado)
 
     @staticmethod
-    def recopilar_tarifario(tarifario: Tarifario) -> None:
-        pass
-
-    @staticmethod
-    def revisar_tarifario(tarifario: Tarifario) -> None:
+    def evaluar_tarifa(tarifa: Tarifa) -> None:
         pass
