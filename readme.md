@@ -53,4 +53,14 @@ El sistema desarrollado a seguido una arquitectura de microservicios, los cuales
 - [Gestión Integral de Riesgos](https://github.com/smenaquispe/ISIII/tree/christian_pardave?tab=readme-ov-file)
 - [Gestión de Proyectos y Obras](https://github.com/smenaquispe/ISIII/tree/bruno?tab=readme-ov-file)
 
+![gestion_riesgos](https://github.com/user-attachments/assets/c86d4d24-1999-4bab-9c1b-90185519ce25)
 
+## Documentación de Servicios
+
+La documentación de los servicios de realizó con Swagger en cada uno de los microservicios.
+
+![image](https://github.com/user-attachments/assets/92597c6e-bc53-4fbb-a114-da86a1d59d3f)
+
+- [Planeamiento Estratégico](https://github.com/smenaquispe/ISIII/tree/sergio_mena?tab=readme-ov-file)
+- [Gestión Integral de Riesgos](https://github.com/smenaquispe/ISIII/tree/christian_pardave?tab=readme-ov-file)
+- [Gestión de Proyectos y Obras](https://github.com/smenaquispe/ISIII/tree/bruno?tab=readme-ov-file)
