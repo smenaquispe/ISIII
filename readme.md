@@ -13,8 +13,8 @@ El Departamento Tarifario ha sido creado para facilitar su uso en la empresa SED
 
 Tecnologias Usadas
 
-
 ![diagrama microservicio](https://github.com/user-attachments/assets/e47f2e57-01f9-45fa-aeb1-5286daecfe92)
 
+BONITASOFT
 
 ![BONITA](https://github.com/user-attachments/assets/001eda68-66c9-485b-84da-096eda894ff6)
