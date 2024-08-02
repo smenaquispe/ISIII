@@ -34,10 +34,6 @@ El propósito fundamental de este sistema de gestión de suministro de agua pota
 - D- Principio de Inversión de Dependencia (Dependency Inversion Principle): Las dependencias deben ir desde los módulos de alto nivel hacia los módulos de bajo nivel. Utilizamos la inyección de dependencias para implementar este principio: No se aplicó
 
 
-
-
-
-
 ## 3. Microservicios
 
 El sistema desarrollado a seguido una arquitectura de microservicios, los cuales se identifaron en base a un proceso de negocio de la empresa cliente, Sedapal.
@@ -50,7 +46,14 @@ El sistema desarrollado a seguido una arquitectura de microservicios, los cuales
 
 ![gestion_riesgos](https://github.com/user-attachments/assets/c86d4d24-1999-4bab-9c1b-90185519ce25)
 
-## Documentación de Servicios
+## 4. Pruebas de APIs
+
+Las pruebas se realizaron en Postman, el proyecto está en visibildad pública: [Proyecto Sedapal IS3](https://www.postman.com/tecla-industries/workspace/proyecto-sedapal-is3/overview)
+
+![Postman](https://github.com/user-attachments/assets/9dad5d78-58c9-4401-a10d-5376b400ff19)
+
+
+## 5. Documentación de Servicios
 
 La documentación de los servicios de realizó con Swagger en cada uno de los microservicios.
 
