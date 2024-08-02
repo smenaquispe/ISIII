@@ -23,3 +23,13 @@
 
 
 ## 2. Requisitos y Features
+
+
+
+
+
+
+
+## 3. Microservicios
+
+El sistema desarrollado a seguido una arquitectura de microservicios, los cuales se identifaron en base a un proceso de negocio de la empresa cliente, Sedapal.
