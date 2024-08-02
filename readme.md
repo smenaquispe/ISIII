@@ -71,7 +71,7 @@ La documentación de los servicios de realizó con Swagger en cada uno de los mi
 
 ## 6. Gestión de Cambios
 
-Para la gestión de cambios se utilizó la herramienta Trello, con estilo Kanban.
+Para la gestión de cambios se utilizó la herramienta Trello, con estilo Kanban. [URL](https://trello.com/b/zeXYGXMw/sistema-sedapal)
 
 ![trello](https://github.com/user-attachments/assets/3263652a-6595-48ea-be48-e7bacb6f1d90)
 
