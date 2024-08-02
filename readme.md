@@ -50,4 +50,7 @@ El sistema desarrollado a seguido una arquitectura de microservicios, los cuales
 ![departamentos](https://github.com/user-attachments/assets/debe27cc-3f3d-4e59-8580-57f348da97c5)
 
 - [Planeamiento Estratégico](https://github.com/smenaquispe/ISIII/tree/sergio_mena?tab=readme-ov-file)
+- [Gestión Integral de Riesgos](https://github.com/smenaquispe/ISIII/tree/christian_pardave?tab=readme-ov-file)
+- [Gestión de Proyectos y Obras](https://github.com/smenaquispe/ISIII/tree/bruno?tab=readme-ov-file)
+
 
