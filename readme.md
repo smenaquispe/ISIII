@@ -1,9 +1,4 @@
-Enrollment Management System UNSA (Tecla industry)
-.Net C# MySQL RabbitMQ Docker
-
-React TypeScript Redux SASS
-
-Dexo Corp Members:
+ (Tecla industry)
 
 INTEGRANTES:
 Apaza Andaluz, Diego Francisco
