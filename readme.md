@@ -18,3 +18,8 @@ Tecnologias Usadas
 BONITASOFT
 
 ![BONITA](https://github.com/user-attachments/assets/001eda68-66c9-485b-84da-096eda894ff6)
+
+SWEGGER
+
+![swegger](https://github.com/user-attachments/assets/99626d7a-89e3-485f-a245-85540743d818)
+
