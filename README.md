@@ -7,3 +7,8 @@
 
 ## SWAGGER
 
+<img src="docs/swagger1.png" alt="SWAGGER"/>
+
+<img src="docs/swagger2.png" alt="SWAGGER"/>
+
+<img src="docs/swagger3.png" alt="SWAGGER"/>
