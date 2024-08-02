@@ -1,4 +1,4 @@
-# **(Tecla INDUSTRIES)**
+# <span style="color:blue; font-family:Times New Roman">**(Tecla industry)**</span>
 
 ## INTEGRANTES:
 - Apaza Andaluz
