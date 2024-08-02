@@ -1,5 +1,5 @@
 ## Diagrama UML
-<img src="docs/uml.jpg" alt="Arquitectura General"/>
+<img src="docs/uml_.jpg" alt="Arquitectura General"/>
 
 ## BPM
 
