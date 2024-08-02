@@ -46,8 +46,6 @@ El sistema desarrollado a seguido una arquitectura de microservicios, los cuales
 - [Gestión Presupuestal](https://github.com/smenaquispe/ISIII/tree/saul_condori)
 - [Gestión Tarifaria](https://github.com/smenaquispe/ISIII/tree/paolo_benavente)
 
-![image](https://github.com/user-attachments/assets/2e064f60-892d-4ece-8165-0f562648d4b7)
-
 
 ## 4. Pruebas de APIs
 
