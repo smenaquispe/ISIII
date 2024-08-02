@@ -30,6 +30,26 @@ Como el nombre lo indica, estos microservicios se encargan de gestionar los proy
         - IProyectoRepositorio: Define los métodos que deben ser implementados para la gestión de proyectos.
         - IEstudioRepositorio: Define los métodos que deben ser implementados para la gestión de estudios.
 
+#### 2.1.3. Capa de Repositorio
+
+    - Repositorio: Los repositorios definen métodos para añadir, eliminar, y actualizar entidades.
+        - ProyectoRepositorio:
+        - EstudioRepositorio:
+    - BD: Clase que maneja la conexión a la base de datos.
+
 ### 2.2 Diagrama
 
 <img src="../archivos_readme/gestion_de_proyectos.jpg" alt="Arquitectura Gestion de Proyectos"/>
+
+## 3. Pruebas
+
+### 3.1. Pruebas de API
+### 3.1.1 Proyecto
+<img src="../archivos_readme/ppc.jpeg" alt="postman_proyecto_crear"/>
+
+<img src="../archivos_readme/ppb.jpeg" alt="postman_proyecto_buscar"/>
+
+### 3.2. Pruebas de rendimiento
+
+### 3.3. Pruebas de seguridad
+
