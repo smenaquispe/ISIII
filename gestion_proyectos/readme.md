@@ -32,4 +32,4 @@ Como el nombre lo indica, estos microservicios se encargan de gestionar los proy
 
 ### 2.2 Diagrama
 
-<img src="archivos_readme/gestion_de_proyectos.jpg" alt="Arquitectura Gestion de Proyectos"/>
+<img src="../archivos_readme/gestion_de_proyectos.jpg" alt="Arquitectura Gestion de Proyectos"/>
