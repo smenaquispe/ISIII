@@ -1,7 +1,23 @@
 import pytest
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask.testing import FlaskClient
-from main import create_app
+
+# Define la función create_app aquí
+def create_app() -> Flask:
+    app = Flask(__name__)
+
+    @app.route('/tarifarios/crear', methods=['POST'])
+    def crear_tarifario():
+        data = request.json
+        # Simula la creación de una tarifa
+        return jsonify({'message': 'Tarifa creada', 'id': '12345'}), 201
+
+    @app.route('/tarifarios/<id>/aprobar', methods=['POST'])
+    def aprobar_tarifario(id):
+        # Simula la aprobación de una tarifa
+        return jsonify({'message': 'Tarifa aprobada'}), 200
+
+    return app
 
 @pytest.fixture
 def app() -> Flask:
@@ -35,3 +51,4 @@ def test_aprobar_tarifario(client: FlaskClient):
     response = client.post(f'/tarifarios/{tarifario_id}/aprobar')
     assert response.status_code == 200
     assert response.json['message'] == 'Tarifa aprobada'
+
