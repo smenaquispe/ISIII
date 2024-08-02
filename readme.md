@@ -62,3 +62,11 @@ La documentación de los servicios de realizó con Swagger en cada uno de los mi
 - [Planeamiento Estratégico](https://github.com/smenaquispe/ISIII/tree/sergio_mena?tab=readme-ov-file)
 - [Gestión Integral de Riesgos](https://github.com/smenaquispe/ISIII/tree/christian_pardave?tab=readme-ov-file)
 - [Gestión de Proyectos y Obras](https://github.com/smenaquispe/ISIII/tree/bruno/gestion_proyectos)
+
+
+## 6. Gestión de Cambios
+
+Para la gestión de cambios se utilizó la herramienta Trello, con estilo Kanban.
+
+![trello](https://github.com/user-attachments/assets/3263652a-6595-48ea-be48-e7bacb6f1d90)
+
