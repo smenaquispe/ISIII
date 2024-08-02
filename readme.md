@@ -1,4 +1,4 @@
-# **(Tecla industry)**
+# **(Tecla INDUSTRIES)**
 
 ## INTEGRANTES:
 - Apaza Andaluz
