@@ -22,7 +22,11 @@ BONITASOFT
 SWEGGER
 
 ![swegger](https://github.com/user-attachments/assets/99626d7a-89e3-485f-a245-85540743d818)
-
+.
+![image](https://github.com/user-attachments/assets/b240f9f6-1323-4f2a-8174-f03ab3d5cd88)
 MODELO SWEGGER
 
 ![modelo](https://github.com/user-attachments/assets/69f8fc3c-1371-45ce-af9b-a3249eeb8b3c)
+
+
+
